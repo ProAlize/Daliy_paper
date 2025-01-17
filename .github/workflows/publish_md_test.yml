@@ -1,0 +1,104 @@
+name: Publish output MD to GitHub Pages
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Run daily arxiv"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - uses: actions/checkout@v3
+
+      # 下载生成的 Artifact
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: cron_runs.yaml
+          workflow_conclusion: success
+          name: arxiv-scanner-outputs
+
+      # 显示下载的文件结构（用于调试）
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      # 检查 output.md 和 output_translated.md 是否存在
+      - name: Check for output files
+        id: check_files
+        uses: andstor/file-existence-action@v2
+        with:
+          files: output.md,output_translated.md
+
+      # 确保输出目录和语言子目录存在
+      - name: Ensure dist directories exist
+        run: |
+          mkdir -p dist/en
+          mkdir -p dist/zh
+
+      # 转换英文版本的 output.md 为网页
+      - name: Convert English version to pages
+        uses: wranders/markdown-to-pages-action@v0.1
+        if: steps.check_files.outputs.files_exists == 'true'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file: output.md
+          out-path: dist/en
+          out-path-not-empty: true
+
+      # 转换中文版本的 output_translated.md 为网页
+      - name: Convert Chinese version to pages
+        uses: wranders/markdown-to-pages-action@v0.1
+        if: steps.check_files.outputs.files_exists == 'true'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file: output_translated.md
+          out-path: dist/zh
+          out-path-not-empty: true
+
+      # 生成导航首页 index.html
+      - name: Generate navigation index
+        run: |
+          echo "<!DOCTYPE html>" > dist/index.html
+          echo "<html lang=\"en\">" >> dist/index.html
+          echo "<head>" >> dist/index.html
+          echo "    <meta charset=\"UTF-8\">" >> dist/index.html
+          echo "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">" >> dist/index.html
+          echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> dist/index.html
+          echo "    <title>GPT Paper Assistant</title>" >> dist/index.html
+          echo "</head>" >> dist/index.html
+          echo "<body>" >> dist/index.html
+          echo "    <h1>GPT Paper Assistant</h1>" >> dist/index.html
+          echo "    <p>Welcome to the Arxiv Paper Assistant! Please select a language:</p>" >> dist/index.html
+          echo "    <ul>" >> dist/index.html
+          echo "        <li><a href=\"./en\">English Version</a></li>" >> dist/index.html
+          echo "        <li><a href=\"./zh\">中文版本</a></li>" >> dist/index.html
+          echo "    </ul>" >> dist/index.html
+          echo "</body>" >> dist/index.html
+          echo "</html>" >> dist/index.html
+
+      # 上传静态网页文件作为 GitHub Pages 的 artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        if: steps.check_files.outputs.files_exists == 'true'
+        with:
+          path: dist
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        if: steps.check_files.outputs.files_exists == 'true'
+        with:
+          # 不需要额外参数，actions/deploy-pages 会自动使用上传的 artifact
+          token: ${{ secrets.GITHUB_TOKEN }}
+        id: deployment
+

@@ -1,0 +1,23 @@
+ 1. New advancements in quantization techniques for large language models
+    - Relevant: Papers that introduce novel methods for quantizing large language models, especially those focusing on reducing model size or computational requirements without sacrificing performance. This can include methods such as low-bit quantization, quantization-aware training, and optimizations that maintain or improve the model's efficiency and performance. Research that combines quantization with techniques like knowledge distillation or optimization techniques, such as those leveraging tensor decomposition or pruning, is particularly relevant.
+    - Not relevant: Papers that primarily focus on the application of quantization in unrelated fields, or papers that only discuss simple, traditional quantization techniques without introducing new methodological advancements.
+ 2. Optical Gas Detection with AI
+    - Relevant: 
+      Articles introducing AI-powered methods for optical gas detection, particularly focusing on advancements in hyperspectral imaging, infrared spectroscopy, or laser-based detection techniques. 
+      Relevant papers might describe:
+      1. Novel algorithms for processing and analyzing spectral data.
+      2. AI models (e.g., convolutional neural networks or transformers) designed to improve the detection sensitivity and specificity of gas species.
+      3. Methods combining AI with traditional physics-based modeling for robust and real-time gas quantification.
+      4. Innovations in data augmentation, domain adaptation, or transfer learning to address limited labeled datasets in optical gas detection scenarios.
+      5. Research integrating AI with sensor fusion, leveraging data from multiple optical modalities.
+    - Not relevant:
+      Articles focused solely on the development of optical sensors or traditional signal processing methods without incorporating AI. Papers discussing AI in general gas detection without specific focus on optical techniques are also less relevant.
+3. mmWave or Lidar with AI
+    - Relevant:
+    Papers focusing on the use of AI techniques in millimeter-wave (mmWave) or Lidar systems, particularly for:
+        Signal processing and noise reduction in mmWave or Lidar sensing.
+        Enhanced imaging, object detection, or environmental sensing using mmWave or Lidar radar combined with AI models.
+        AI-driven algorithms for beamforming, channel estimation, or interference mitigation.
+        Studies exploring hybrid methods combining mmWave and other sensory data with AI to improve overall system performance.
+    - Not Relevant:
+    Articles primarily discussing hardware design or physical layer advancements in mmWave systems without applying AI. General AI studies without specific ties to mmWave technology or applications would also fall outside the relevant scope.
