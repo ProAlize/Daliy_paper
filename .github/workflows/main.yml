@@ -79,7 +79,7 @@ jobs:
 
       # Step 11: Upload the generated output as an artifact to GitHub Pages
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: './out'  # Specifies the directory containing the output files to be uploaded
 
