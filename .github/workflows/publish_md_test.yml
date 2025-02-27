@@ -88,7 +88,7 @@ jobs:
 
       # 上传静态网页文件作为 GitHub Pages 的 artifact
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         if: steps.check_files.outputs.files_exists == 'true'
         with:
           path: dist
