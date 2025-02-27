@@ -21,3 +21,27 @@
         Studies exploring hybrid methods combining mmWave and other sensory data with AI to improve overall system performance.
     - Not Relevant:
     Articles primarily discussing hardware design or physical layer advancements in mmWave systems without applying AI. General AI studies without specific ties to mmWave technology or applications would also fall outside the relevant scope.
+
+4. Advancements in object detection techniques
+   - Relevant: Papers introducing novel algorithms or methods for object detection, especially those improving accuracy in complex scenes (e.g., occlusion, varying lighting) or real-time applications. Research combining object detection with other tasks like tracking or segmentation is also relevant.
+   - Not relevant: Papers focusing on general computer vision techniques without specific advancements in object detection or those primarily about hardware optimizations.
+
+5. Progress in image segmentation methods
+   - Relevant: Research on semantic and instance segmentation, particularly innovations enhancing real-time performance, accuracy in challenging conditions (e.g., cluttered backgrounds, fine details), or applications in autonomous systems. Papers on panoptic segmentation or methods integrating segmentation with detection are also of interest.
+   - Not relevant: Papers on traditional image processing techniques, simple thresholding methods, or those not specifically addressing segmentation improvements.
+
+6. Developments in text-to-image generation models
+   - Relevant: Studies on large-scale models generating high-quality images from text descriptions, including methods to improve generation speed, image fidelity, and controllability (e.g., style transfer, attribute manipulation). Research on diffusion models, GANs, or transformer-based approaches for text-to-image synthesis is particularly relevant.
+   - Not relevant: Papers on image generation without text input, image captioning, or those not focusing on large-scale generative models.
+
+7. Innovations in 3D reconstruction techniques
+   - Relevant: Papers on methods for reconstructing 3D scenes from single or multiple images, especially end-to-end learning approaches, neural rendering, or techniques improving reconstruction accuracy and efficiency. Research on applications like augmented reality, robotics, or autonomous driving is also relevant.
+   - Not relevant: Studies on 3D modeling without reconstruction from images, traditional computer graphics techniques, or papers focusing solely on depth estimation without 3D scene reconstruction.
+
+8. Applications of optical gas imaging
+   - Relevant: Research utilizing optical technologies (e.g., hyperspectral imaging, infrared spectroscopy) for gas detection and visualization, particularly in environmental monitoring, industrial safety, or leak detection. Papers combining AI with optical gas imaging for improved detection or quantification are especially relevant.
+   - Not relevant: Papers on gas detection without optical methods, general environmental studies, or those not applying imaging technologies for gas visualization.
+
+
+
+
