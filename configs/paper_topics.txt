@@ -46,5 +46,9 @@
    - Not relevant: 
    None.
 
-
+ 8. New advancements in linguistics and language study    
+   - Relevant: 
+   Papers that introduce advancements in linguistics and language study are reshaping our understanding of communication through a blend of technology, neuroscience, and social analysis. These can include computational linguistics, cognitive linguistics, sociolinguistics, corpus linguistics, phonetics and phonology, pragmatics, and language acquisition                            
+   - Not relevant:
+   Articles focused solely on literature and culture study or the history about language and linguistics.
 
