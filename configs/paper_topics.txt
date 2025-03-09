@@ -52,3 +52,15 @@
    - Not relevant:
    Articles focused solely on literature and culture study or the history about language and linguistics.
 
+9. mmWave Radar Technology with AI Integration
+   - Relevant:
+   Papers focusing on the integration of AI with millimeter-wave (mmWave) radar systems for advanced sensing and perception tasks. Relevant research includes:
+   AI-enhanced signal processing: Novel algorithms for noise reduction, interference mitigation, or adaptive filtering in mmWave radar data, such as using neural networks for motion artifact removal in vital sign detection 2.
+   Object detection and tracking: AI-driven methods for real-time target recognition, classification, and tracking in automotive, industrial, or UAV applications, e.g., 4D radar-camera fusion for roadside perception 213.
+   Sensor fusion: Hybrid systems combining mmWave radar with LiDAR, cameras, or other sensors, leveraging deep learning for multi-modal data fusion (e.g., joint calibration of radar and vision sensors using neural networks) 17.
+   Gesture and activity recognition: AI models (e.g., CNNs) for interpreting micro-Doppler signatures or micro-motions in radar signals, such as hand gesture recognition for human-computer interfaces 12.
+   Autonomous systems: Applications in autonomous vehicles (e.g., adaptive cruise control, obstacle detection) or drones (e.g., navigation, terrain following) using AI-optimized radar systems 115.
+   Healthcare and biometrics: Non-contact vital sign monitoring (e.g., heartbeat, respiration) through radar signals processed by AI for anomaly detection 27.
+
+   - Not relevant:
+   Studies solely focused on mmWave radar hardware design (e.g., antenna arrays, MMIC fabrication) without AI integration, traditional radar signal processing without machine learning, or general mmWave applications unrelated to AI-driven advancements.
